@@ -18,7 +18,6 @@ const MovieProvider = ({ children }) => {
                 headers: {
                     'Content-Type': 'application/json', // Ensure headers are set correctly
                 },
-                credentials: 'include',
             });
             if (!response.ok) {
                 throw new Error('Failed to fetch movies');

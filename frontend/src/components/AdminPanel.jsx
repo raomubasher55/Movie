@@ -144,7 +144,6 @@ export default function AdminPanel() {
           headers: {
             'Content-Type': 'application/json', // Ensure headers are set correctly
         },
-        credentials: 'include',
         });
 
 

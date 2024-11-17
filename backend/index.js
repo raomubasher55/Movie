@@ -20,19 +20,19 @@ const allowedOrigins = [
   'http://fiilmywap.com'
 ];
 
-// app.use(cors({
-//   origin: (origin, callback) => {
-//     // If origin is not present (e.g. curl requests), allow it
-//     if (!origin || allowedOrigins.includes(origin)) {
-//       callback(null, true); // Allow the request
-//     } else {
-//       callback(new Error('Not allowed by CORS'), false); // Reject the request
-//     }
-//   },
-//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-//   allowedHeaders: ['Origin', 'Content-Type', 'Accept', 'Authorization'],
-//   credentials: true // Allow credentials (cookies, etc.)
-// }));
+app.use(cors({
+  origin: (origin, callback) => {
+    // If origin is not present (e.g. curl requests), allow it
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true); // Allow the request
+    } else {
+      callback(new Error('Not allowed by CORS'), false); // Reject the request
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Origin', 'Content-Type', 'Accept', 'Authorization'],
+  credentials: true // Allow credentials (cookies, etc.)
+}));
 
 app.use((err, req, res, next) => {
     console.error(err.stack);  // Log the error for debugging
