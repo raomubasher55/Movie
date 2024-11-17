@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(express.static('public'));
 app.use(cookieParser());
 app.use(cors({
-    origin: ['https://fiilmywap.com/' , 'http://localhost:5173'],
+    origin: ['https://fiilmywap.com/' , 'http://localhost:5173' , 'http://localhost:3000'],
     credentials: true,  
 }));
 
