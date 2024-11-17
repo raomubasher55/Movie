@@ -12,7 +12,7 @@ const FloatingMenu = () => {
   useEffect(() => {
     const fetchModeStatus = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/mode/status");
+        const response = await axios.get(`${import.meta.env.VITE_APP_URL}/api/mode/status`);
         if (response?.data?.onMode !== undefined) {
           setIsOnMode(response.data.onMode);
           setLink(response.data.link || ""); // Fetch the saved link if it exists
@@ -35,7 +35,7 @@ const FloatingMenu = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:4000/api/mode/toggle", {
+      const response = await axios.post(`${import.meta.env.VITE_APP_URL}/api/mode/toggle`, {
         onMode: !isOnMode, // Toggle the mode status
         link: isOnMode ? "" : link, // Send the link only if turning mode on
       });
@@ -66,7 +66,7 @@ const FloatingMenu = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:4000/api/mode/saveLink", { link });
+      const response = await axios.post(`${import.meta.env.VITE_APP_URL}/api/mode/saveLink`, { link });
       if (response?.data?.link) {
         console.log("Link saved successfully:", response.data.link);
       }

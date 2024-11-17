@@ -46,15 +46,15 @@ const MovieCard = ({ data, selectedCategory }) => {
         try {
             const movieIds = movies?.movies?.map((movie) => movie.movieId);
 
-            if (!movieIds || movieIds.length === 0) {
-                throw new Error("No movies found in the database");
-            }
+            // if (!movieIds || movieIds.length === 0) {
+            //     throw new Error("No movies found in the database");
+            // }
 
             for (const movieId of movieIds) {
                 const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US`;
                 const response = await fetch(url);
                 const data = await response.json();
-                
+                console.log(data)
 
                 if (data && data.id) {
                     const movieWithDetails = {
@@ -86,6 +86,11 @@ const MovieCard = ({ data, selectedCategory }) => {
     }, []);
 
     useEffect(() => {
+     matchedMovies()
+    }, [])
+    
+
+    useEffect(() => { 
         matchedMovies();
     }, [movies, selectedCategory]); // Trigger when selectedCategory or movies changes
 

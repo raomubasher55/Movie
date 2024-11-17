@@ -32,7 +32,7 @@ const MovieDetail = () => {
   useEffect(() => {
     const fetchModeStatus = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/mode/status");
+        const response = await axios.get(`${import.meta.env.VITE_APP_URL}/api/mode/status`);
         setIsOnMode(response.data);
         setMode(response.data.onMode)
       } catch (error) {
