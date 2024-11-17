@@ -12,28 +12,22 @@ app.use(express.static('public'));
 app.use(cookieParser());
 
 
-// List of allowed origins
-const allowedOrigins = [
-  'http://localhost:5173',    // React app running locally
-  'http://localhost:3000', // Another allowed website
-  'https://fiilmywap.com',
-  'http://fiilmywap.com'
-];
+// // List of allowed origins
+// const allowedOrigins = [
+//   'http://localhost:5173',    // React app running locally
+//   'http://localhost:3000', // Another allowed website
+//   'https://fiilmywap.com',
+//   'http://fiilmywap.com'
+// ];
 
-app.use(cors({
-  origin: (origin, callback) => {
-    // If origin is not present (e.g. curl requests), allow it
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true); // Allow the request
-    } else {
-      callback(new Error('Not allowed by CORS'), false); // Reject the request
-    }
-  },
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Origin', 'Content-Type', 'Accept', 'Authorization'],
-  credentials: true // Allow credentials (cookies, etc.)
-}));
+const corsOptions = {
+  origin: 'http://fiilmywap.com',  // Allow only this origin to access the API
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allow only these HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'],  // Allow these headers
+};
 
+// Apply the CORS middleware globally
+app.use(cors(corsOptions));
 app.use((err, req, res, next) => {
     console.error(err.stack);  // Log the error for debugging
     res.status(500).json({ error: 'Something went wrong!' });
