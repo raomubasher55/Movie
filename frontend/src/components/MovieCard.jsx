@@ -72,7 +72,7 @@ const MovieCard = ({ data, selectedCategory }) => {
             setMyMovies(allMatchedMovies);
 
         } catch (error) {
-            console.error("Error fetching matched movies:", error);
+            // console.error("Error fetching matched movies:", error);
         } finally {
             setLoading(false);
         }

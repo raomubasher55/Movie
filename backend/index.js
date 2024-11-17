@@ -10,10 +10,12 @@ const app = express();
 app.use(express.json())
 app.use(express.static('public'));
 app.use(cookieParser());
-app.use(cors({
-    origin: ['https://fiilmywap.com/' , 'http://localhost:5173' , 'http://localhost:3000'],
-    credentials: true,  
-}));
+// app.use(cors({
+//     origin: ['https://fiilmywap.com' , 'http://localhost:5173' , 'http://localhost:3000'],
+//     credentials: true,  
+// }));
+
+app.use(cors());
 
 app.use((err, req, res, next) => {
     console.error(err.stack);  // Log the error for debugging
