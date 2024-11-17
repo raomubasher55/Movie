@@ -1,0 +1,213 @@
+
+/* Styling the Quill Editor container */
+.ql-container {
+    background-color: #1a1a1a;
+    color: #d1d5db;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Customize the toolbar */
+  .ql-toolbar {
+    background-color: #333; 
+    border-radius: 8px 8px 0 0;
+    padding: 8px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .ql-toolbar .ql-formats {
+    margin-right: 0;
+  }
+  
+  /* Customize buttons and dropdowns in the toolbar */
+  .ql-toolbar .ql-picker, 
+  .ql-toolbar .ql-button {
+    color: #d1d5db;
+    border: 1px solid #444;
+    background-color: #333;
+    padding: 6px 12px;
+    margin-right: 6px;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+  
+  .ql-toolbar .ql-picker:hover,
+  .ql-toolbar .ql-button:hover {
+    background-color: #555;
+    color: white;
+  }
+  
+  /* Heading styles */
+  .ql-editor h1, 
+  .ql-editor h2, 
+  .ql-editor h3, 
+  .ql-editor h4, 
+  .ql-editor h5, 
+  .ql-editor h6 {
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  
+  .ql-editor h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .ql-editor h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
+  
+  .ql-editor h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .ql-editor h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .ql-editor h5 {
+    font-size: 1.125rem;
+    font-weight: bold;
+  }
+  
+  .ql-editor h6 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  /* Paragraph styling */
+  .ql-editor p {
+    margin-bottom: 1rem;
+    font-size: 16px;
+    color: #d1d5db;
+  }
+  
+  /* List styles (ordered and unordered) */
+  .ql-editor ul, 
+  .ql-editor ol {
+    padding-left: 20px;
+    margin-bottom: 1rem;
+  }
+  
+  .ql-editor ul li, 
+  .ql-editor ol li {
+    margin-bottom: 8px;
+    color: #d1d5db;
+  }
+  
+  /* Links styling */
+  .ql-editor a {
+    color: #3498db; 
+    text-decoration: none;
+    border-bottom: 2px solid #3498db;
+    transition: all 0.3s;
+  }
+  
+  .ql-editor a:hover {
+    color: #2980b9;
+    border-bottom: 2px solid #2980b9;
+  }
+  
+  /* Blockquote styling */
+  .ql-editor blockquote {
+    border-left: 4px solid #f39c12;
+    padding-left: 16px;
+    margin-left: 0;
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: #e67e22;
+  }
+  
+  /* Code blocks styling */
+  .ql-editor pre {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+  }
+  
+  .ql-editor code {
+    background-color: #34495e;
+    color: #ecf0f1;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+  
+  /* Table styling */
+  .ql-editor table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+  }
+  
+  .ql-editor table, 
+  .ql-editor th, 
+  .ql-editor td {
+    border: 1px solid #444;
+  }
+  
+  .ql-editor th, 
+  .ql-editor td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .ql-editor th {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Image styling */
+  .ql-editor img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Alignments (left, center, right) */
+  .ql-editor .ql-align-center {
+    text-align: center;
+  }
+  
+  .ql-editor .ql-align-right {
+    text-align: right;
+  }
+  
+  .ql-editor .ql-align-left {
+    text-align: left;
+  }
+  
+  /* Strike-through, underline, bold, italic */
+  .ql-editor .ql-strike {
+    text-decoration: line-through;
+  }
+  
+  .ql-editor .ql-underline {
+    text-decoration: underline;
+  }
+  
+  .ql-editor .ql-bold {
+    font-weight: bold;
+  }
+  
+  .ql-editor .ql-italic {
+    font-style: italic;
+  }
+  
+  /* Add a placeholder for the editor */
+  .ql-editor.ql-blank::before {
+    color: #888;
+    content: 'Write something...';
+  }
+  

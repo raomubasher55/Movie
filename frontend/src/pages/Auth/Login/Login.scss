@@ -1,0 +1,121 @@
+// General Variables
+$primary-color: #04152D; // Dark Blue Color
+$secondary-color: #0056b3; // Hover effect color for buttons
+$highlight-color: #007bff; // Button color
+$error-color: #ff4d4f; // Error message color
+$white: #ffffff; // White text
+$box-shadow: rgba(0, 0, 0, 0.1); // Subtle box shadow
+
+// Container for the entire login page
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #04152d; /* Dark blue background for the entire page */
+  }
+  
+  // The login box styling
+  .login-box {
+    background-color: rgba(4, 21, 45, 0.9); /* Darker blue with transparency */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 4px 15px rgba(0, 123, 255, 0.2); /* Blue shadow */
+    width: 100%;
+    max-width: 400px;
+  
+    // Title of the login form
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #fff; /* White color for the heading */
+      font-size: 24px; /* Larger font size for the heading */
+    }
+  }
+  
+  // Form elements
+  .form-group {
+    margin-bottom: 20px;
+  
+    label {
+      display: block;
+      font-size: 14px;
+      color: #fff; /* White label color */
+      margin-bottom: 8px;
+    }
+  
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      color: #fff; /* White text color in input fields */
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white background for inputs */
+      transition: border-color 0.3s ease;
+  
+      &:focus {
+        border-color: #007bff; /* Focused input border color */
+      }
+    }
+  }
+  
+  // Submit button
+  .btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Light blue button color */
+    color: #fff; /* White text on button */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+  }
+  
+  // Forgot password link
+  .forgot-password {
+    text-align: center;
+    margin-top: 15px;
+  
+    a {
+      color: #007bff; /* Light blue color for the link */
+      text-decoration: none;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  // Sign up link
+  .signup {
+    text-align: center;
+    margin-top: 10px;
+  
+    p {
+      font-size: 14px;
+  
+      a {
+        color: #007bff; /* Light blue color for the link */
+        text-decoration: none;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  
+  // Error message styling
+  .error-message {
+    color: #ff4d4d; /* Red color for error message */
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  

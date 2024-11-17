@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: black;
+}
+
+
+
+/* General styles for the custom overview */
+.custom-overview {
+    font-size: 1.125rem; /* Set the base font size */
+    line-height: 1.8; /* Increase line height for readability */
+    margin-top: 1.5rem; /* Space above the content */
+    margin-bottom: 2.5rem; /* Space below the content */
+    color: #d1d5db; /* Light gray text color for the content */
+  }
+  
+  .custom-overview span {
+    background-color: transparent !important; /* Remove any background color applied inline */
+    color: inherit; /* Make sure text color inherits */
+  }
+  
+  .custom-overview h1,
+  .custom-overview h2,
+  .custom-overview h3,
+  .custom-overview h4,
+  .custom-overview h5,
+  .custom-overview h6 {
+    font-weight: bold; /* Bold for all headings */
+    color: #fff; /* White color for headings */
+    margin-bottom: 1rem; /* Margin below each heading */
+  }
+  
+  .custom-overview ol {
+    padding-left: 1.5rem; /* Add padding to the left of the ordered list */
+    margin-bottom: 1rem;
+    color: #d1d5db; /* Light gray color for list items */
+  }
+  
+  .custom-overview ol li {
+    margin-bottom: 1rem; /* Add space between each list item */
+  }
+  
+  .custom-overview ul {
+    padding-left: 1.5rem; /* Padding to indent the unordered list */
+    margin-bottom: 1rem;
+    color: #d1d5db;
+  }
+  
+  .custom-overview ul li {
+    margin-bottom: 1rem; /* Add space between each list item */
+  }
+  
+  .custom-overview a {
+    color: #3498db; /* Blue color for links */
+    text-decoration: none;
+    border-bottom: 2px solid #3498db; /* Underline on hover */
+    transition: all 0.3s ease;
+  }
+  
+  .custom-overview a:hover {
+    color: #2980b9; /* Darker blue on hover */
+    border-bottom: 2px solid #2980b9; /* Darker underline on hover */
+  }
+  
+  .custom-overview blockquote {
+    border-left: 4px solid #f39c12; /* Orange left border for blockquote */
+    padding-left: 16px; /* Padding inside the blockquote */
+    margin-left: 0;
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: #f39c12; /* Color for the text inside blockquote */
+  }
+  
+  .custom-overview pre {
+    background-color: #2c3e50; /* Dark background for code blocks */
+    color: #ecf0f1; /* Light text color */
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    margin-bottom: 1rem;
+  }
+  
+  .custom-overview .ql-cursor {
+    display: none; /* Hide the Quill cursor, which might show up in custom content */
+  }
+  
+  .custom-overview .ql-editor {
+    background-color: transparent; /* Ensure the background is transparent */
+  }
+  
+  .custom-overview span[style*="background-color: rgb(0, 0, 0)"] {
+    background-color: transparent !important; /* Remove black background */
+    color: #d1d5db; /* Set the color to the text color */
+  }
+  
+  /* Additional Styling for elements that need attention */
+  .custom-overview h1,
+  .custom-overview h2,
+  .custom-overview h3,
+  .custom-overview h4,
+  .custom-overview h5,
+  .custom-overview h6 {
+    color: #fff; /* White color for headings */
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .custom-overview ol,
+  .custom-overview ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .custom-overview a {
+    color: #3498db;
+    text-decoration: underline;
+  }
+  
+  .custom-overview a:hover {
+    color: #2980b9;
+    text-decoration: none;
+  }
+  
+  .custom-overview blockquote {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 16px;
+    border-left: 4px solid #f39c12;
+    font-style: italic;
+  }
+  
