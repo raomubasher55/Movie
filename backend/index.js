@@ -10,11 +10,12 @@ const app = express();
 app.use(express.json())
 app.use(express.static('public'));
 app.use(cookieParser());
+
 app.use(cors({
   origin: '*',  // Allow all origins
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Origin', 'Content-Type', 'Accept', 'Authorization'],
-  credentials: true  // Optional: Enable credentials (cookies, etc.)
+  credentials: true 
 }));
 
 app.use((err, req, res, next) => {
