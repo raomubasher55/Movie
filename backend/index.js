@@ -16,8 +16,8 @@ app.use(cookieParser());
 const allowedOrigins = [
   'http://localhost:5173',    // React app running locally
   'http://localhost:3000', // Another allowed website
-  'https://fiilmywap.com/',
-  'http://fiilmywap.com/'
+  'https://fiilmywap.com',
+  'http://fiilmywap.com'
 ];
 
 app.use(cors({
