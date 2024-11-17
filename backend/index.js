@@ -12,7 +12,7 @@ app.use(express.static('public'));
 app.use(cookieParser());
 
 app.use(cors({
-  origin: '*',  // Allow all origins
+  origin: ['https://fiilmywap.com/' , 'http://localhost:3000/' , 'http://localhost:5173/'],  // Allow all origins
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Origin', 'Content-Type', 'Accept', 'Authorization'],
   credentials: true 
