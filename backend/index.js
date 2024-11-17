@@ -11,11 +11,27 @@ app.use(express.json())
 app.use(express.static('public'));
 app.use(cookieParser());
 
+
+// List of allowed origins
+const allowedOrigins = [
+  'http://localhost:5173',    // React app running locally
+  'http://localhost:3000', // Another allowed website
+  'https://fiilmywap.com/',
+  'http://fiilmywap.com/'
+];
+
 app.use(cors({
-  origin: ['https://fiilmywap.com/' , 'http://localhost:3000/' , 'http://localhost:5173/'],  // Allow all origins
+  origin: (origin, callback) => {
+    // If origin is not present (e.g. curl requests), allow it
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true); // Allow the request
+    } else {
+      callback(new Error('Not allowed by CORS'), false); // Reject the request
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Origin', 'Content-Type', 'Accept', 'Authorization'],
-  credentials: true 
+  credentials: true // Allow credentials (cookies, etc.)
 }));
 
 app.use((err, req, res, next) => {
@@ -28,7 +44,7 @@ const userRoute = require('./routes/userRoute');
 const categoryRoutes = require('./routes/categoryRoute');
 const deletecategory = require('./routes/deletecategory')
 
-app.get('test', (req ,res)=>{
+app.get('/test', (req ,res)=>{
   res.send("Hello world")
 })
 app.use('/api/v1', userRoute);

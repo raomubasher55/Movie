@@ -13,13 +13,19 @@ const MovieProvider = ({ children }) => {
 
     const fetchMovies = async () => {
         try {
-            const response = await fetch(`${import.meta.env.VITE_APP_URL}/api/v1/all`);
+            const response = await fetch(`${import.meta.env.VITE_APP_URL}/api/v1/all`,{
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/json', // Ensure headers are set correctly
+                },
+                credentials: 'include',
+            });
             if (!response.ok) {
                 throw new Error('Failed to fetch movies');
             }
             const data = await response.json();
             // console.log(data)
-            setMovies(data);
+            setMovies(data); 
         } catch (error) {
             console.error('Error fetching movies:', error);
         }
