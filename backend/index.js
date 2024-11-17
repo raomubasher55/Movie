@@ -10,12 +10,12 @@ const app = express();
 app.use(express.json())
 app.use(express.static('public'));
 app.use(cookieParser());
-// app.use(cors({
-//     origin: ['https://fiilmywap.com' , 'http://localhost:5173' , 'http://localhost:3000'],
-//     credentials: true,  
-// }));
-
-app.use(cors());
+app.use(cors({
+  origin: '*',  // Allow all origins
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Origin', 'Content-Type', 'Accept', 'Authorization'],
+  credentials: true  // Optional: Enable credentials (cookies, etc.)
+}));
 
 app.use((err, req, res, next) => {
     console.error(err.stack);  // Log the error for debugging
@@ -27,6 +27,9 @@ const userRoute = require('./routes/userRoute');
 const categoryRoutes = require('./routes/categoryRoute');
 const deletecategory = require('./routes/deletecategory')
 
+app.get('test', (req ,res)=>{
+  res.send("Hello world")
+})
 app.use('/api/v1', userRoute);
 app.use('/api/v1', movieRoute);
 app.use('/api/v1', categoryRoutes);
