@@ -140,7 +140,12 @@ export default function AdminPanel() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_APP_URL}/api/v1/categories`);
+        const response = await axios.get(`${import.meta.env.VITE_APP_URL}/api/v1/categories`,{
+          headers: {
+            'Content-Type': 'application/json', // Ensure headers are set correctly
+        },
+        credentials: 'include',
+        });
 
 
         // Assuming the response data is an array of category objects
